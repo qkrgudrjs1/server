@@ -1,6 +1,6 @@
 import express from "express"
 import morgan from "morgan"
-import twwetsRouter from './router/tweets.js'
+// import tweetsRouter from './router/tweets.js'
 import authRouter from './router/auth.js'
 
 const app = express()
@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(morgan("dev"))
 
-app.use('/tweets', tweetsRouter)
+// app.use('/tweets', tweetsRouter)
 app.use('/auth', authRouter)
 
 app.use((req, res, next) => {
