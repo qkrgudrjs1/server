@@ -16,9 +16,9 @@ export async function signup(req, res, next) {
     const hashed = await bcrypt.hash(password, config.bcrypt.saltRounds);
     const userId = await authRepository.createUser({username, hashed, name, email, url});
     const token = createJwtToken(userId)
-    res.status(201).json({token, username});
-    
+    res.status(201).json({token, username});  
 }
+
 export async function login(req, res, next) {
     const { username, password } = req.body;
     // const user = await authRepository.login(username);
